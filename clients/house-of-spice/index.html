@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="House of Spice — Authentic Halal Indian Cuisine in Raynes Park, SW20. Dine in, takeaway & delivery. Open Tue–Sun from 5pm." />
+  <title>House of Spice | Authentic Indian Cuisine · Raynes Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PASSWORD GATE -->
+  <div id="passwordGate">
+    <div class="gate-box">
+      <div class="gate-icon">🔒</div>
+      <p class="gate-msg">Can't show the website</p>
+      <p class="gate-contact">Contact us: <a href="tel:+447482779995">+44 7482 779995</a></p>
+      <form id="gateForm">
+        <input id="gateInput" type="password" placeholder="Enter password" autocomplete="off" />
+        <button type="submit">Enter</button>
+        <p class="gate-error" id="gateError"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">🪔</span>
+        <span class="logo-text">House of <em>Spice</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#buffet">Sunday Buffet</a></li>
+        <li><a href="#find-us">Find Us</a></li>
+      </ul>
+      <div class="switch-wrap" id="themeSwitch" title="Toggle light/dark mode">
+        <div class="switch-plate">
+          <div class="switch-lever" id="switchLever"></div>
+          <div class="switch-led" id="switchLed"></div>
+        </div>
+        <span class="switch-label" id="switchLabel">Dark</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#buffet">Sunday Buffet</a>
+      <a href="#find-us">Find Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1800&auto=format&fit=crop')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="section-tag">Raynes Park, SW20</span>
+      <div class="ornament"><span>✦</span></div>
+      <h1>House of<br/><em>Spice</em></h1>
+      <p class="hero-sub">Authentic Indian Cuisine · Halal Certified</p>
+      <div class="hero-badges">
+        <span class="badge">🌿 Halal Certified</span>
+        <span class="badge">🚗 Free Delivery 2mi</span>
+        <span class="badge">🏆 10% Off Takeaway</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+        <a href="#buffet" class="btn btn-outline">Sunday Buffet</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to discover</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- INFO BAR -->
+  <div class="info-bar">
+    <div class="info-item">
+      <span class="info-icon">🕐</span>
+      <div>
+        <strong>Open Tues–Sun</strong>
+        <span>From 5:00pm · Closed Mondays</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">📞</span>
+      <div>
+        <strong>020 8542 4838</strong>
+        <span>Call to order or enquire</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">🎁</span>
+      <div>
+        <strong>10% Off Takeaway</strong>
+        <span>Discount on all collection orders</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">🚗</span>
+      <div>
+        <strong>Free Delivery</strong>
+        <span>Within 2 miles of SW20</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Serve</span>
+        <h2>Our Menu</h2>
+        <div class="ornament"><span>✦</span></div>
+        <p class="section-sub">Authentic recipes, finest halal ingredients, cooked fresh every evening.</p>
+      </div>
+
+      <div class="menu-tabs" id="menuTabs">
+        <button class="tab active" data-tab="starters">Starters</button>
+        <button class="tab" data-tab="specials">Spice Specials</button>
+        <button class="tab" data-tab="mains">Mains</button>
+        <button class="tab" data-tab="tandoori">Tandoori</button>
+        <button class="tab" data-tab="seafood">Seafood</button>
+        <button class="tab" data-tab="veg">Vegetable</button>
+        <button class="tab" data-tab="breads">Breads &amp; Rice</button>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-grid active" id="tab-starters">
+        <div class="menu-card"><div class="menu-info"><h3>Onion Spinach Bhajee</h3><p>Deep fried onion fritter with house spices</p><div class="menu-footer"><span class="price">£4.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Royal Chat Puri</h3><p>Juicy chicken in hot and sour sauce</p><div class="menu-footer"><span class="price">£5.50</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Royal Nawabi Kebab</h3><p>Minced lamb seekh kebab char-grilled in tandoor</p><div class="menu-footer"><span class="price">£5.25</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Samosa Vegetable</h3><p>Triangular pastry with spiced vegetables</p><div class="menu-footer"><span class="price">£4.50</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Samosa Lamb</h3><p>Triangular pastry with spiced minced lamb</p><div class="menu-footer"><span class="price">£4.50</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Murgh Tikka</h3><p>Tender chicken marinated and clay oven cooked</p><div class="menu-footer"><span class="price">£5.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Chingry Puri</h3><p>Prawns on light shell Bengal bread</p><div class="menu-footer"><span class="price">£5.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Chingry Puri King</h3><p>King prawns on light shell Bengal bread</p><div class="menu-footer"><span class="price">£6.95</span></div></div></div>
+        <div class="menu-card featured"><div class="menu-info"><h3>Mixed Starters</h3><p>Chicken tikka, seekh kebab, onion bhaji</p><div class="menu-footer"><span class="price">£6.50</span><span class="tag">Popular</span></div></div></div>
+      </div>
+
+      <!-- SPICE SPECIALS -->
+      <div class="menu-grid" id="tab-specials">
+        <div class="menu-card featured"><div class="menu-info"><h3>Papra <span class="heat">🌶🌶</span></h3><p>Charcoal-toasted boneless in fresh yogurt, cumin seeds, array of spices</p><div class="menu-footer"><span class="price">£9.95–£10.95</span><span class="tag">Chef's Special</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Tava</h3><p>Diced tikka tossed on a glowing iron skillet in light fresh tomato and green pepper sauce</p><div class="menu-footer"><span class="price">£10.95–£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Green Masala <span class="heat">🌶🌶</span></h3><p>Cooked in fresh green herbs, ginger and lime juice</p><div class="menu-footer"><span class="price">£10.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Kerala <span class="heat">🌶🌶</span></h3><p>Charcoal toasted in Southern Frontier herbs with coconut cream and curry leaf</p><div class="menu-footer"><span class="price">£10.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Shuruchi</h3><p>Chicken or lamb with mango pieces in medium spice sauce</p><div class="menu-footer"><span class="price">£10.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Ghorma Sabjee</h3><p>Tender lamb or chicken marinated in lemon and lime with fresh coriander</p><div class="menu-footer"><span class="price">£10.95</span></div></div></div>
+      </div>
+
+      <!-- MAINS -->
+      <div class="menu-grid" id="tab-mains">
+        <div class="menu-card featured"><div class="menu-info"><h3>Tikka Masala</h3><p>Charcoal toasted, simmered in butter saffron cream masala — mild</p><div class="menu-footer"><span class="price">£9.50</span><span class="tag">Popular</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Rogon</h3><p>Charcoal-grilled with eleven herbs and eleven spices</p><div class="menu-footer"><span class="price">£9.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Sag Wala</h3><p>With fresh baby spinach and fragrant herbs. Available with chicken, lamb, prawn or king prawn</p><div class="menu-footer"><span class="price">£9.95–£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Dansak <span class="heat">🌶</span></h3><p>Cooked with special lentils in thick sauce</p><div class="menu-footer"><span class="price">£8.95–£9.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Jalfrezi <span class="heat">🌶🌶</span></h3><p>Sautéed with finely chopped green peppers, tomatoes, green chillies</p><div class="menu-footer"><span class="price">£9.95–£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Balti</h3><p>Fine flavours enhanced by special herb and spice marination</p><div class="menu-footer"><span class="price">£9.95–£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Almond Korma</h3><p>Diced chicken in fresh cream and almond — mild</p><div class="menu-footer"><span class="price">£9.50</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Madras <span class="heat">🌶🌶🌶</span></h3><p>Very spicy preparation</p><div class="menu-footer"><span class="price">£9.50</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Vindaloo <span class="heat">🌶🌶🌶</span></h3><p>Fiery hot curry</p><div class="menu-footer"><span class="price">£9.50</span></div></div></div>
+      </div>
+
+      <!-- TANDOORI -->
+      <div class="menu-grid" id="tab-tandoori">
+        <div class="menu-card featured"><div class="menu-info"><h3>Tandoori Mixed Grill</h3><p>Assortment of tandoori kebabs, tikka and lamb tikka; served with naan and salad</p><div class="menu-footer"><span class="price">£14.95</span><span class="tag">Signature</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Murgh Tikka</h3><p>Diced breast chicken with peppers, tomatoes, onions</p><div class="menu-footer"><span class="price">£9.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Tandoori King Prawns Sizzler</h3><p>King prawns with spices, onions, capsicum, tomatoes</p><div class="menu-footer"><span class="price">£14.95</span></div></div></div>
+      </div>
+
+      <!-- SEAFOOD -->
+      <div class="menu-grid" id="tab-seafood">
+        <div class="menu-card"><div class="menu-info"><h3>Machli Kata Masala</h3><p>Salmon chunks with ginger, garlic, mustard seeds</p><div class="menu-footer"><span class="price">£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Shahi Jhinga</h3><p>King prawns in eleven herbs and spices with tomatoes</p><div class="menu-footer"><span class="price">£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Jhinga Kadhai</h3><p>Grilled king prawns in fresh tomato and pepper sauce</p><div class="menu-footer"><span class="price">£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Jhinga Makhni</h3><p>King prawns simmered in butter, saffron, creamy masala</p><div class="menu-footer"><span class="price">£14.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Machli Fayzee</h3><p>Boneless salmon with peppers, coriander, spiced garlic</p><div class="menu-footer"><span class="price">£14.95</span></div></div></div>
+      </div>
+
+      <!-- VEGETABLE -->
+      <div class="menu-grid" id="tab-veg">
+        <div class="menu-card"><div class="menu-info"><h3>Royal Sabzi</h3><p>Mix of vegetables and paneer on glowing iron skillet</p><div class="menu-footer"><span class="price">£8.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Papra Ki Sabzi <span class="heat">🌶🌶</span></h3><p>Charcoal toasted vegetables in yogurt and spice blend</p><div class="menu-footer"><span class="price">£8.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Sabzi Sizzler</h3><p>Roasted vegetables with fried potato strips</p><div class="menu-footer"><span class="price">£8.95</span></div></div></div>
+      </div>
+
+      <!-- BREADS & RICE -->
+      <div class="menu-grid" id="tab-breads">
+        <div class="menu-card"><div class="menu-info"><h3>Plain Naan</h3><p>Freshly baked in tandoor</p><div class="menu-footer"><span class="price">£3.25</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Garlic Naan</h3><p>With fresh garlic and butter</p><div class="menu-footer"><span class="price">£3.95</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Keema Naan</h3><p>Stuffed with spiced minced lamb</p><div class="menu-footer"><span class="price">£3.95</span></div></div></div>
+        <div class="menu-card featured"><div class="menu-info"><h3>Peshwari Naan</h3><p>Almonds, pistachios and raisins — lightly sweet</p><div class="menu-footer"><span class="price">£3.95</span><span class="tag">Popular</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Pilau Rice</h3><p>Fragrant basmati with whole spices</p><div class="menu-footer"><span class="price">£3.50</span></div></div></div>
+        <div class="menu-card featured"><div class="menu-info"><h3>Biryani</h3><p>Aromatic basmati with chicken, lamb or prawn</p><div class="menu-footer"><span class="price">£12.95</span><span class="tag">Signature</span></div></div></div>
+        <div class="menu-card"><div class="menu-info"><h3>Vegetable Biryani</h3><p>Fragrant rice with seasonal vegetables and whole spices</p><div class="menu-footer"><span class="price">£11.50</span></div></div></div>
+      </div>
+
+      <div class="menu-cta">
+        <p>Full menu and online ordering available at</p>
+        <a href="https://houseofspiceonline.co.uk" class="btn btn-primary" target="_blank" rel="noopener">Order Online →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUNDAY BUFFET -->
+  <section id="buffet" class="buffet-section">
+    <div class="buffet-overlay"></div>
+    <div class="buffet-content container">
+      <span class="buffet-badge">Every Sunday</span>
+      <span class="section-tag">All You Can Eat</span>
+      <h2>Sunday Buffet</h2>
+      <div class="ornament ornament-light"><span>✦</span></div>
+      <p>Join us every Sunday for our legendary all-you-can-eat buffet. Sample the full breadth of our kitchen — from sizzling tandoori to rich curries, fresh breads, and more. The perfect Sunday feast.</p>
+      <div class="buffet-features">
+        <span>🍗 Tandoori &amp; Kebabs</span>
+        <span>🍛 Rich Curries</span>
+        <span>🫓 Fresh Breads</span>
+        <span>🌿 Vegetarian Options</span>
+      </div>
+      <a href="tel:02085424838" class="btn btn-primary">Reserve Your Table — 020 8542 4838</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="container about-grid">
+      <div class="about-photos">
+        <div class="about-photo ap-1" style="background-image: url('https://images.unsplash.com/photo-1701579231305-0754b29946c5?w=800&auto=format&fit=crop')"></div>
+        <div class="about-photo ap-2" style="background-image: url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop')"></div>
+        <div class="about-photo ap-3" style="background-image: url('https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop')"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Our Story</span>
+        <h2>Authentic Flavours,<br/>Warmly Served</h2>
+        <div class="ornament"><span>✦</span></div>
+        <p>House of Spice has been bringing the rich, complex flavours of the Indian subcontinent to Raynes Park for years. Every dish is prepared with care — using traditional recipes, the finest halal ingredients, and a passion for authentic cooking.</p>
+        <p>From our signature Tava sizzlers to our fragrant biryanis, we take pride in every plate. Whether you dine with us, collect, or order for delivery — we bring the restaurant experience to you.</p>
+        <div class="about-stats">
+          <div class="stat"><strong>🌿</strong><span>Halal<br/>Certified</span></div>
+          <div class="stat"><strong>🕐</strong><span>Open<br/>Tues–Sun</span></div>
+          <div class="stat"><strong>📍</strong><span>Raynes Park<br/>SW20</span></div>
+          <div class="stat"><strong>🚗</strong><span>Free<br/>Delivery</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">From Our Kitchen</span>
+        <h2>A Feast for the Eyes</h2>
+        <div class="ornament"><span>✦</span></div>
+      </div>
+    </div>
+    <div class="gallery-masonry">
+      <div class="g-item">
+        <div class="g-img" style="background-image: url('https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=800&auto=format&fit=crop')"></div>
+        <div class="g-overlay"><span>Biryani</span></div>
+      </div>
+      <div class="g-item">
+        <div class="g-img" style="background-image: url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&auto=format&fit=crop')"></div>
+        <div class="g-overlay"><span>Tikka Skewers</span></div>
+      </div>
+      <div class="g-item">
+        <div class="g-img" style="background-image: url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop')"></div>
+        <div class="g-overlay"><span>Rich Curry</span></div>
+      </div>
+      <div class="g-item">
+        <div class="g-img" style="background-image: url('https://images.unsplash.com/photo-1532347231146-80afc9e3df2b?w=800&auto=format&fit=crop')"></div>
+        <div class="g-overlay"><span>Spices</span></div>
+      </div>
+      <div class="g-item">
+        <div class="g-img" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop')"></div>
+        <div class="g-overlay"><span>Restaurant Ambience</span></div>
+      </div>
+      <div class="g-item">
+        <div class="g-img" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&auto=format&fit=crop')"></div>
+        <div class="g-overlay"><span>Fresh Naan</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section id="find-us" class="find-us-section">
+    <div class="container find-us-grid">
+      <div class="find-us-details">
+        <span class="section-tag">Visit Us</span>
+        <h2>Find House of Spice</h2>
+        <div class="ornament"><span>✦</span></div>
+        <div class="loc-list">
+          <div class="loc-item">
+            <span class="loc-icon">📍</span>
+            <div>
+              <strong>Address</strong>
+              <p>507 Kingston Road, Raynes Park<br/>London, SW20 8SF</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">🕐</span>
+            <div>
+              <strong>Opening Hours</strong>
+              <p>Tuesday – Sunday</p>
+              <p>Delivery from 5:00pm · Collection from 5:30pm</p>
+              <p>Closed Mondays</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <p><a href="tel:02085424838">020 8542 4838</a></p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">🚗</span>
+            <div>
+              <strong>Delivery Area</strong>
+              <p>CR4 · KT1–5 · KT17 · KT19 · SM1 · SM3–5 · SW15 · SW17–20</p>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+          <a href="https://maps.google.com/?q=507+Kingston+Road+SW20+8SF" target="_blank" rel="noopener" class="btn btn-primary">Open in Google Maps</a>
+          <a href="https://houseofspiceonline.co.uk" target="_blank" rel="noopener" class="btn btn-outline">Order Online</a>
+        </div>
+      </div>
+      <div class="map-card">
+        <div class="map-card-inner">
+          <div class="map-pin-icon">📍</div>
+          <h3>House of Spice</h3>
+          <p>507 Kingston Road</p>
+          <p>Raynes Park, SW20 8SF</p>
+          <div class="map-divider"></div>
+          <p class="map-note">Near Raynes Park Station · SW20</p>
+          <a href="https://maps.google.com/?q=507+Kingston+Road+SW20+8SF" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 20px; width: 100%; justify-content: center;">Get Directions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">🪔</span>
+          <span class="logo-text">House of <em>Spice</em></span>
+        </a>
+        <p>Authentic Halal Indian Cuisine<br/>Raynes Park, SW20</p>
+        <span class="halal-badge">🌿 Halal Certified</span>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#buffet">Sunday Buffet</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+          <li><a href="https://houseofspiceonline.co.uk" target="_blank" rel="noopener">Order Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:02085424838">020 8542 4838</a></li>
+          <li>507 Kingston Road</li>
+          <li>Raynes Park, SW20 8SF</li>
+          <li>Tues–Sun from 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 House of Spice · Raynes Park · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

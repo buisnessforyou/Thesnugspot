@@ -1,0 +1,6 @@
+{"type":"server-started","port":64589,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:64589","screen_dir":"/Users/lukas/ai buisness 1/.superpowers/brainstorm/92825-1774466593"}
+{"type":"screen-added","file":"/Users/lukas/ai buisness 1/.superpowers/brainstorm/92825-1774466593/visual-style.html"}
+{"source":"user-event","type":"click","text":"🪔\n      HOUSE OF SPICE\n      Authentic Indian Cuisine\n      \n      Est. Raynes Park\n    \n    \n      Rich & Traditional\n      Deep reds, gold, and dark backgrounds. Feels premium, authentic, and luxurious — like a proper Indian restaurant. Classic serif fonts and ornamental accents.","choice":"rich-traditional","id":null,"timestamp":1774466655693}
+{"source":"user-event","type":"click","text":"🪔\n      HOUSE OF SPICE\n      Authentic Indian Cuisine\n      \n      Est. Raynes Park\n    \n    \n      Rich & Traditional\n      Deep reds, gold, and dark backgrounds. Feels premium, authentic, and luxurious — like a proper Indian restaurant. Classic serif fonts and ornamental accents.","choice":"rich-traditional","id":null,"timestamp":1774466660768}
+{"type":"screen-added","file":"/Users/lukas/ai buisness 1/.superpowers/brainstorm/92825-1774466593/layout.html"}
+{"type":"server-stopped","reason":"idle timeout"}

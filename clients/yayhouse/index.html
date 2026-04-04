@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yayhouse Cafe Surrey — specialty coffee, fresh food, and good vibes. Order online or visit us today." />
+  <title>Yayhouse Cafe | Surrey's Favourite Coffee Spot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">Yayhouse <span>☕</span></a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#find-us">Find Us</a></li>
+      </ul>
+      <a href="#order" class="btn btn-nav">Order Now</a>
+      <button class="hamburger" aria-label="Open menu">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#find-us">Find Us</a>
+      <a href="#order" class="btn btn-primary">Order Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Surrey's Cosiest Cafe</p>
+      <h1>Good Coffee.<br/>Great Vibes.<br/><span>Every Time.</span></h1>
+      <p class="hero-sub">Specialty espresso, freshly made food & the warmest welcome in Surrey.</p>
+      <div class="hero-ctas">
+        <a href="#order" class="btn btn-primary btn-lg">Order Online</a>
+        <a href="#menu" class="btn btn-outline btn-lg">See Our Menu</a>
+      </div>
+      <div class="hero-trust">
+        <div class="stars">★★★★★</div>
+        <span>500+ five-star reviews on Google</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- QUICK INFO BAR -->
+  <div class="info-bar">
+    <div class="info-item">
+      <span class="info-icon">🕗</span>
+      <div>
+        <strong>Open Daily</strong>
+        <span>Mon–Fri 7am–7pm · Sat–Sun 8am–8pm</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">📍</span>
+      <div>
+        <strong>Surrey Town Centre</strong>
+        <span>Easy parking · 2 min walk from station</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">🛵</span>
+      <div>
+        <strong>Delivery & Click & Collect</strong>
+        <span>Order ready in 15 minutes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED / ORDER BANNER -->
+  <section id="order" class="order-banner">
+    <div class="order-content">
+      <h2>Craving something right now?</h2>
+      <p>Skip the queue — order your coffee and food ahead online and it'll be ready when you arrive.</p>
+      <div class="order-btns">
+        <a href="#" class="btn btn-primary btn-lg" onclick="trackClick('order_now')">Order Now →</a>
+        <a href="#" class="btn btn-ghost" onclick="trackClick('book_table')">📅 Reserve a Table</a>
+      </div>
+    </div>
+    <div class="order-image">
+      <div class="coffee-card">
+        <div class="cc-img cc-img-1"></div>
+        <div class="cc-label">Signature Flat White</div>
+        <div class="cc-price">£3.80</div>
+        <button class="btn btn-primary btn-sm" onclick="trackClick('add_flatwhite')">Add to Order</button>
+      </div>
+      <div class="coffee-card card-offset">
+        <div class="cc-img cc-img-2"></div>
+        <div class="cc-label">Matcha Latte</div>
+        <div class="cc-price">£4.20</div>
+        <button class="btn btn-primary btn-sm" onclick="trackClick('add_matcha')">Add to Order</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What We Serve</p>
+        <h2>Our Menu</h2>
+        <p class="section-sub">Made fresh every day with locally sourced ingredients.</p>
+      </div>
+
+      <div class="menu-tabs" id="menuTabs">
+        <button class="tab active" data-tab="drinks">Drinks</button>
+        <button class="tab" data-tab="food">Food</button>
+        <button class="tab" data-tab="specials">Daily Specials</button>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-grid active" id="tab-drinks">
+        <div class="menu-card">
+          <div class="menu-img menu-img-espresso"></div>
+          <div class="menu-info">
+            <h3>Espresso</h3>
+            <p>Single origin, freshly pulled</p>
+            <div class="menu-footer">
+              <span class="price">£2.50</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_espresso')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-flatwhite"></div>
+          <div class="menu-info">
+            <h3>Flat White</h3>
+            <p>Double ristretto, velvety microfoam</p>
+            <div class="menu-footer">
+              <span class="price">£3.80</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_flatwhite2')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-matcha"></div>
+          <div class="menu-info">
+            <h3>Matcha Latte</h3>
+            <p>Ceremonial grade matcha, oat milk</p>
+            <div class="menu-footer">
+              <span class="price">£4.20</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_matcha2')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-coldbrew"></div>
+          <div class="menu-info">
+            <h3>Cold Brew</h3>
+            <p>16-hour steep, smooth & rich</p>
+            <div class="menu-footer">
+              <span class="price">£4.50</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_coldbrew')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-chai"></div>
+          <div class="menu-info">
+            <h3>Spiced Chai</h3>
+            <p>House blend, steamed almond milk</p>
+            <div class="menu-footer">
+              <span class="price">£4.00</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_chai')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card menu-card-cta">
+          <h3>See the Full Drinks Menu</h3>
+          <p>15+ drinks including seasonal specials, smoothies & fresh juices</p>
+          <a href="#" class="btn btn-primary" onclick="trackClick('full_menu')">View Full Menu</a>
+        </div>
+      </div>
+
+      <!-- FOOD -->
+      <div class="menu-grid" id="tab-food">
+        <div class="menu-card">
+          <div class="menu-img menu-img-avo"></div>
+          <div class="menu-info">
+            <h3>Avocado Toast</h3>
+            <p>Sourdough, smashed avo, chilli flakes, poached egg</p>
+            <div class="menu-footer">
+              <span class="price">£8.50</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_avo')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-granola"></div>
+          <div class="menu-info">
+            <h3>Granola Bowl</h3>
+            <p>House granola, coconut yoghurt, seasonal fruit</p>
+            <div class="menu-footer">
+              <span class="price">£7.00</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_granola')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-sandwich"></div>
+          <div class="menu-info">
+            <h3>Toasted Club</h3>
+            <p>Grilled chicken, smoked bacon, lettuce, aioli</p>
+            <div class="menu-footer">
+              <span class="price">£9.50</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_sandwich')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-cake"></div>
+          <div class="menu-info">
+            <h3>Banana Loaf</h3>
+            <p>Baked fresh daily, walnut & honey</p>
+            <div class="menu-footer">
+              <span class="price">£3.50</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_cake')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-img menu-img-salad"></div>
+          <div class="menu-info">
+            <h3>Yayhouse Salad</h3>
+            <p>Quinoa, roasted veg, tahini dressing</p>
+            <div class="menu-footer">
+              <span class="price">£9.00</span>
+              <button class="btn btn-primary btn-sm" onclick="trackClick('add_salad')">Order</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card menu-card-cta">
+          <h3>Full Food Menu</h3>
+          <p>Breakfast, lunch & all-day snacks. Something for everyone.</p>
+          <a href="#" class="btn btn-primary" onclick="trackClick('full_food_menu')">View Full Menu</a>
+        </div>
+      </div>
+
+      <!-- SPECIALS -->
+      <div class="menu-grid" id="tab-specials">
+        <div class="specials-banner">
+          <div class="special-badge">Today's Special</div>
+          <h3>Lavender Honey Latte + Croissant</h3>
+          <p>Our house lavender syrup, steamed oat milk, and a warm buttery croissant from our local bakery partner.</p>
+          <div class="special-price">
+            <span class="old-price">£8.30</span>
+            <span class="new-price">£6.50</span>
+            <span class="save-badge">Save £1.80</span>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="trackClick('daily_special')">Grab This Deal</button>
+        </div>
+        <div class="specials-side">
+          <div class="special-item">
+            <span class="special-day">Mon & Wed</span>
+            <h4>Student Deal</h4>
+            <p>Any hot drink + snack for £5 with valid student ID</p>
+            <button class="btn btn-outline btn-sm" onclick="trackClick('student_deal')">Claim</button>
+          </div>
+          <div class="special-item">
+            <span class="special-day">Weekend Brunch</span>
+            <h4>Brunch for Two</h4>
+            <p>Two full brunches + two drinks. Available Sat & Sun until 12pm.</p>
+            <button class="btn btn-outline btn-sm" onclick="trackClick('brunch_deal')">Book Now</button>
+          </div>
+          <div class="special-item">
+            <span class="special-day">Every Day</span>
+            <h4>Loyalty Card</h4>
+            <p>Buy 9 coffees, get the 10th free. Ask in-store or collect points online.</p>
+            <button class="btn btn-outline btn-sm" onclick="trackClick('loyalty')">Get Yours</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="container about-grid">
+      <div class="about-img-grid">
+        <div class="about-img about-img-1"></div>
+        <div class="about-img about-img-2"></div>
+        <div class="about-img about-img-3"></div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">Our Story</p>
+        <h2>Made with love in Surrey since 2019</h2>
+        <p>Yayhouse was born from a simple idea: a place where you actually want to stay. Not just for coffee — but for the feeling.</p>
+        <p>We source our beans from ethical, small-batch roasters, bake with local suppliers, and make every drink with care. Whether you're in for five minutes or five hours, this is your spot.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <strong>500+</strong>
+            <span>5-star reviews</span>
+          </div>
+          <div class="stat">
+            <strong>6 years</strong>
+            <span>Serving Surrey</span>
+          </div>
+          <div class="stat">
+            <strong>3 roasters</strong>
+            <span>Ethical sourcing</span>
+          </div>
+        </div>
+        <a href="#find-us" class="btn btn-primary">Come Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What People Say</p>
+        <h2>Loved by the locals</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Best flat white I've had outside of Melbourne. The staff are warm, the space is beautiful. My go-to spot every single morning."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">JM</div>
+            <div>
+              <strong>James M.</strong>
+              <span>Local · Google Review</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The avocado toast is genuinely the best I've had in Surrey. Came in once and now I'm here every weekend. The matcha latte is 10/10."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SR</div>
+            <div>
+              <strong>Sophie R.</strong>
+              <span>Local · Google Review</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Fantastic atmosphere for working or catching up with friends. The WiFi is great, the coffee is better, and the banana loaf is dangerous!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">DK</div>
+            <div>
+              <strong>David K.</strong>
+              <span>Local · Google Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-cta">
+        <a href="#" class="btn btn-outline" onclick="trackClick('see_all_reviews')">See All 500+ Reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">@yayhousecafe</p>
+        <h2>Follow the Vibes</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g1">
+        <div class="gallery-overlay">
+          <span>☕ Our signature latte art</span>
+        </div>
+      </div>
+      <div class="gallery-item g2">
+        <div class="gallery-overlay">
+          <span>🥑 Avo toast done right</span>
+        </div>
+      </div>
+      <div class="gallery-item g3">
+        <div class="gallery-overlay">
+          <span>🌿 Matcha mornings</span>
+        </div>
+      </div>
+      <div class="gallery-item g4">
+        <div class="gallery-overlay">
+          <span>🏡 Our cosy corner</span>
+        </div>
+      </div>
+      <div class="gallery-item g5">
+        <div class="gallery-overlay">
+          <span>🍰 Freshly baked daily</span>
+        </div>
+      </div>
+      <div class="gallery-item g6 gallery-follow">
+        <a href="#" class="btn btn-primary" onclick="trackClick('instagram')">Follow on Instagram →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section id="find-us" class="find-us-section">
+    <div class="container find-us-grid">
+      <div class="find-us-text">
+        <p class="section-tag">Visit Us</p>
+        <h2>Come hang out</h2>
+        <div class="location-details">
+          <div class="loc-item">
+            <span class="loc-icon">📍</span>
+            <div>
+              <strong>Address</strong>
+              <p>123 High Street, Surrey, GU1 3AA</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">🕗</span>
+            <div>
+              <strong>Opening Hours</strong>
+              <p>Mon–Fri: 7:00am – 7:00pm</p>
+              <p>Sat–Sun: 8:00am – 8:00pm</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">📞</span>
+            <div>
+              <strong>Get in Touch</strong>
+              <p><a href="tel:+441483000000">01483 000 000</a></p>
+              <p><a href="mailto:hello@yayhouse.co.uk">hello@yayhouse.co.uk</a></p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">🚗</span>
+            <div>
+              <strong>Getting Here</strong>
+              <p>Free parking on High Street after 6pm. NCP car park 3 min walk. 2 min from Surrey train station.</p>
+            </div>
+          </div>
+        </div>
+        <div class="find-us-ctas">
+          <a href="#" class="btn btn-primary" onclick="trackClick('get_directions')">Get Directions</a>
+          <a href="#order" class="btn btn-outline" onclick="trackClick('order_pickup')">Order for Collection</a>
+        </div>
+      </div>
+      <div class="map-placeholder">
+        <div class="map-pin">📍</div>
+        <p>Yayhouse Cafe</p>
+        <p>Surrey High Street</p>
+        <a href="#" class="btn btn-primary btn-sm" onclick="trackClick('open_maps')">Open in Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / LOYALTY -->
+  <section class="loyalty-section">
+    <div class="container loyalty-inner">
+      <div class="loyalty-text">
+        <h2>Get your 10th coffee free ☕</h2>
+        <p>Join the Yayhouse loyalty programme. Earn points on every order, get early access to specials, and never miss a deal.</p>
+      </div>
+      <form class="loyalty-form" onsubmit="handleSignup(event)">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit" class="btn btn-primary">Join Free</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">Yayhouse ☕</a>
+        <p>Surrey's cosiest cafe.<br/>Where every visit feels like home.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" onclick="trackClick('footer_instagram')">📸</a>
+          <a href="#" aria-label="Facebook" onclick="trackClick('footer_facebook')">👍</a>
+          <a href="#" aria-label="TikTok" onclick="trackClick('footer_tiktok')">🎵</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#order">Order Online</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#">Allergen Info</a></li>
+          <li><a href="#">Catering Enquiries</a></li>
+          <li><a href="#">Loyalty Programme</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Yayhouse Cafe Ltd · Surrey · Made with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- STICKY ORDER BAR (mobile) -->
+  <div class="sticky-bar" id="stickyBar">
+    <a href="#order" class="btn btn-primary" onclick="trackClick('sticky_order')">Order Now</a>
+    <a href="tel:+441483000000" class="btn btn-outline">Call Us</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

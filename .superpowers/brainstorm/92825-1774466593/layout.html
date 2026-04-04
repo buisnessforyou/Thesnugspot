@@ -1,0 +1,122 @@
+<h2>House of Spice — Page Layout</h2>
+<p class="subtitle">Single long-scroll page. Click a section to see its details.</p>
+
+<div style="display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap;">
+
+  <!-- WIREFRAME COLUMN -->
+  <div style="flex: 1; min-width: 260px; max-width: 360px;">
+    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 12px;">Page Structure</div>
+
+    <div style="border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; font-size: 0.82rem;">
+
+      <div style="background: #1a0a00; color: #D4A017; padding: 10px 14px; font-weight: 700; letter-spacing: 1px; display:flex; justify-content:space-between; align-items:center;">
+        <span>NAV</span><span style="font-size:0.7rem; color:#f5deb3; font-weight:400;">Logo · Menu · About · Find Us</span>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #1a0a00, #5c1010); color: #D4A017; padding: 20px 14px; text-align:center; border-bottom: 2px solid #8B0000;">
+        <div style="font-size: 1.1rem; font-weight: 900; letter-spacing: 2px; font-family: Georgia, serif;">HERO</div>
+        <div style="font-size: 0.72rem; color: #f5deb3; margin-top: 4px;">Full-screen · Restaurant name · Tagline · Halal badge · Scroll CTA</div>
+      </div>
+
+      <div style="background: #2d0a0a; color: #D4A017; padding: 10px 14px; text-align:center; border-bottom: 1px solid #3d1a1a;">
+        <div style="font-weight: 700; font-size: 0.8rem;">INFO BAR</div>
+        <div style="font-size: 0.7rem; color: #f5deb3; margin-top: 2px;">Hours · Phone · Free delivery · 10% takeaway</div>
+      </div>
+
+      <div style="background: #1a0505; padding: 14px; border-bottom: 1px solid #3d1a1a;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.8rem; margin-bottom: 4px;">MENU SECTION</div>
+        <div style="font-size: 0.7rem; color: #f5deb3;">Tabbed: Starters · Spice Specials · Mains · Tandoori · Seafood · Veg · Bread & Rice</div>
+        <div style="display:flex; gap:4px; margin-top:8px; flex-wrap:wrap;">
+          <span style="background:#8B0000; color:#f5deb3; padding:2px 8px; border-radius:10px; font-size:0.65rem;">Starters</span>
+          <span style="background:#3d1a1a; color:#D4A017; padding:2px 8px; border-radius:10px; font-size:0.65rem;">Specials</span>
+          <span style="background:#3d1a1a; color:#D4A017; padding:2px 8px; border-radius:10px; font-size:0.65rem;">Mains</span>
+          <span style="background:#3d1a1a; color:#D4A017; padding:2px 8px; border-radius:10px; font-size:0.65rem;">Tandoori</span>
+          <span style="background:#3d1a1a; color:#D4A017; padding:2px 8px; border-radius:10px; font-size:0.65rem;">Seafood</span>
+        </div>
+      </div>
+
+      <div style="background: #8B0000; padding: 14px; border-bottom: 1px solid #3d1a1a; text-align:center;">
+        <div style="color: #FFD700; font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;">🌟 SUNDAY BUFFET BANNER</div>
+        <div style="font-size: 0.7rem; color: #fff; margin-top: 4px;">All-you-can-eat · Full-width atmospheric banner · Book / Call CTA</div>
+      </div>
+
+      <div style="background: #1a0505; padding: 14px; border-bottom: 1px solid #3d1a1a;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.8rem; margin-bottom: 4px;">ABOUT / STORY</div>
+        <div style="font-size: 0.7rem; color: #f5deb3;">Photo grid left · Copy right · Halal cert · Est. date · Highlights</div>
+      </div>
+
+      <div style="background: #0d0303; padding: 14px; border-bottom: 1px solid #3d1a1a;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.8rem; margin-bottom: 4px;">GALLERY</div>
+        <div style="font-size: 0.7rem; color: #f5deb3;">Atmospheric food & restaurant photos · Masonry grid</div>
+      </div>
+
+      <div style="background: #1a0505; padding: 14px; border-bottom: 1px solid #3d1a1a;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.8rem; margin-bottom: 4px;">FIND US / CONTACT</div>
+        <div style="font-size: 0.7rem; color: #f5deb3;">Address · Hours · Phone · Map placeholder · Delivery area</div>
+      </div>
+
+      <div style="background: #0d0303; color: #D4A017; padding: 10px 14px; text-align:center;">
+        <div style="font-weight: 700; font-size: 0.8rem;">FOOTER</div>
+        <div style="font-size: 0.7rem; color: #f5deb3; margin-top: 2px;">Halal · Links · © 2026</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DETAILS COLUMN -->
+  <div style="flex: 1.4; min-width: 280px;">
+    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 12px;">Key Design Decisions</div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+      <div style="border: 1.5px solid #8B0000; border-radius: 8px; padding: 14px; background: rgba(139,0,0,0.08);">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px;">Colour Palette</div>
+        <div style="display:flex; gap: 8px; align-items:center; margin-bottom: 8px;">
+          <div style="width:28px;height:28px;border-radius:4px;background:#1a0a00;border:1px solid #333;"></div>
+          <div style="width:28px;height:28px;border-radius:4px;background:#8B0000;border:1px solid #333;"></div>
+          <div style="width:28px;height:28px;border-radius:4px;background:#D4A017;border:1px solid #333;"></div>
+          <div style="width:28px;height:28px;border-radius:4px;background:#f5deb3;border:1px solid #333;"></div>
+          <div style="width:28px;height:28px;border-radius:4px;background:#fff8f0;border:1px solid #ccc;"></div>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">Near-black · Deep crimson · Antique gold · Wheat/cream · Off-white</div>
+      </div>
+
+      <div style="border: 1.5px solid var(--border); border-radius: 8px; padding: 14px;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px;">Typography</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
+          <strong>Headings:</strong> Playfair Display (serif, elegant)<br>
+          <strong>Body / menu items:</strong> Inter (clean, readable)<br>
+          <strong>Accents / labels:</strong> Spaced uppercase caps
+        </div>
+      </div>
+
+      <div style="border: 1.5px solid var(--border); border-radius: 8px; padding: 14px;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px;">Menu Tabs</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
+          7 tabs: Starters · Spice Specials · Mains · Tandoori · Seafood · Vegetable · Bread & Rice<br>
+          Real prices and descriptions from houseofspiceonline.co.uk
+        </div>
+      </div>
+
+      <div style="border: 1.5px solid #8B0000; border-radius: 8px; padding: 14px; background: rgba(139,0,0,0.08);">
+        <div style="color: #FFD700; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px;">🌟 Sunday Buffet Feature</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
+          Full-width crimson banner with gold typography. "All you can eat" messaging, Sunday-only badge, prominent Call to Book CTA using their phone number.
+        </div>
+      </div>
+
+      <div style="border: 1.5px solid var(--border); border-radius: 8px; padding: 14px;">
+        <div style="color: #D4A017; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px;">Images</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
+          Sourced from Unsplash — rich Indian food photography, candlelit restaurant interiors, spice markets. No generic stock photos.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 20px; padding: 14px; background: rgba(212,160,23,0.1); border: 1.5px solid #D4A017; border-radius: 8px; font-size: 0.82rem; color: var(--text);">
+  <strong style="color:#D4A017;">Stack:</strong> Pure HTML + CSS + vanilla JS — same approach as the Yayhouse site. No frameworks, fast to load, easy to hand off. Single file output at <code>clients/house-of-spice/index.html</code>.
+</div>

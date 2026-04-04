@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:whistlestopfish.co.uk)",
+      "WebFetch(domain:house-of-spicerestaurant.co.uk)",
+      "WebFetch(domain:www.yell.com)",
+      "WebFetch(domain:www.approvedgarages.co.uk)",
+      "WebFetch(domain:businessyab.com)",
+      "WebFetch(domain:choicehair.webs.com)",
+      "WebFetch(domain:www.laundrylocations.co.uk)",
+      "WebFetch(domain:zaubee.com)",
+      "WebFetch(domain:www.allinlondon.co.uk)",
+      "WebFetch(domain:www.treatwell.co.uk)",
+      "WebFetch(domain:london.cylex-uk.co.uk)",
+      "WebFetch(domain:elegancedrycleaner.com)",
+      "WebFetch(domain:directory.getsurrey.co.uk)",
+      "Bash(/Users/lukas/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh --project-dir \"/Users/lukas/ai buisness 1\")",
+      "Bash(node server.cjs --help)",
+      "WebFetch(domain:www.just-eat.co.uk)",
+      "WebFetch(domain:ubereats.com)",
+      "WebFetch(domain:deliveroo.co.uk)",
+      "WebFetch(domain:houseofspiceonline.co.uk)",
+      "WebFetch(domain:www.tripadvisor.com)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(export PATH=\"$HOME/.nvm/versions/node/v24.14.0/bin:$PATH\")",
+      "Bash(npx --yes vercel --version)",
+      "Bash(npx vercel:*)",
+      "WebFetch(domain:noembed.com)"
+    ]
+  }
+}
