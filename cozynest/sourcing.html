@@ -40,8 +40,11 @@
       color: var(--deep-brown);
       text-decoration: none;
       margin-bottom: 40px;
+      display: flex; align-items: center; gap: 12px;
     }
     .gate-logo span { color: var(--terracotta); }
+    .gate-mark { width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid rgba(44,26,14,.15); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .gate-mark img { height: 42px; object-fit: contain; }
     .gate-box {
       background: white;
       border: 1px solid var(--sand);
@@ -302,7 +305,7 @@
 
 <!-- ── GATE ── -->
 <div id="gate">
-  <a href="/" class="gate-logo">The Snug<span>Spot</span></a>
+  <a href="/" class="gate-logo"><span class="gate-mark"><img src="/images/sofa-logo.png" alt="The Snug Spot"/></span>The Snug<span>Spot</span></a>
   <div class="gate-box">
     <div class="gate-icon">🔒</div>
     <h2>Internal Access</h2>
