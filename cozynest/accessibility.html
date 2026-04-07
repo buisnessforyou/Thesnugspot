@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="/images/sofa-logo.png"/>
+  <title>Accessibility Statement — The Snug Spot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #FAF7F2;
+      --off-white:  #F5F0E8;
+      --sand:       #EDE5D8;
+      --deep-brown: #2C1A0E;
+      --walnut:     #5C3D2E;
+      --terracotta: #C4785A;
+      --text-dark:  #1A1410;
+      --text-mid:   #4A3728;
+      --text-light: #8A7A6E;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,247,242,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(44,26,14,0.08);
+      padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 500;
+      color: var(--deep-brown); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo span { color: var(--terracotta); }
+    .nav-mark { width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid rgba(44,26,14,.15); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .nav-mark img { height: 36px; object-fit: contain; }
+    .nav-back {
+      font-size: 13px; font-weight: 500; letter-spacing: .06em;
+      color: var(--text-mid); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--terracotta); }
+    .nav-back svg { width: 14px; height: 14px; }
+
+    .legal-hero {
+      background: var(--deep-brown);
+      padding: 80px 48px 64px;
+      text-align: center;
+    }
+    .legal-hero .eyebrow {
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 16px;
+    }
+    .legal-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 300; color: var(--cream);
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .legal-hero .updated {
+      font-size: 13px; color: rgba(250,247,242,.5);
+    }
+
+    .legal-wrap {
+      max-width: 820px; margin: 0 auto;
+      padding: 72px 48px 96px;
+    }
+
+    .legal-section { margin-bottom: 52px; }
+    .legal-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.65rem; font-weight: 400;
+      color: var(--deep-brown);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--sand);
+    }
+    .legal-section h3 {
+      font-size: 14px; font-weight: 500;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--walnut); margin: 28px 0 10px;
+    }
+    .legal-section p { color: var(--text-mid); margin-bottom: 14px; }
+    .legal-section ul, .legal-section ol {
+      padding-left: 22px; color: var(--text-mid); margin-bottom: 14px;
+    }
+    .legal-section li { margin-bottom: 7px; }
+    .legal-section a { color: var(--terracotta); text-decoration: none; }
+    .legal-section a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--off-white);
+      border-left: 3px solid var(--terracotta);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+      color: var(--text-mid);
+      font-size: 14px;
+    }
+
+    footer {
+      background: var(--deep-brown);
+      padding: 40px 48px;
+      text-align: center;
+    }
+    .foot-copy { color: rgba(250,247,242,.45); font-size: 13px; margin-bottom: 12px; }
+    .foot-legal { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .foot-legal a {
+      color: rgba(250,247,242,.55); font-size: 13px;
+      text-decoration: none; transition: color .2s;
+    }
+    .foot-legal a:hover { color: var(--terracotta); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .legal-hero { padding: 56px 24px 48px; }
+      .legal-wrap { padding: 48px 24px 72px; }
+      footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="nav-mark"><img src="/images/sofa-logo.png" alt="The Snug Spot"/></span>The Snug<span>Spot</span></a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to shop
+  </a>
+</nav>
+
+<div class="legal-hero">
+  <p class="eyebrow">Commitment</p>
+  <h1>Accessibility Statement</h1>
+  <p class="updated">Last updated: April 7, 2026</p>
+</div>
+
+<div class="legal-wrap">
+
+  <div class="highlight-box">
+    We are committed to making The Snug Spot website accessible to everyone, regardless of ability or technology. We continuously work to improve the accessibility of our Site and welcome your feedback.
+  </div>
+
+  <div class="legal-section">
+    <h2>1. Our Commitment</h2>
+    <p>The Snug Spot is committed to ensuring digital accessibility for people with disabilities. We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA, and we continually review and improve our Site to meet or exceed these standards.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>2. What We Do</h2>
+    <p>We have taken the following steps to support accessibility on our Site:</p>
+    <ul>
+      <li>Semantic HTML structure with proper heading hierarchy</li>
+      <li>Alt text on all product images and decorative elements marked as presentational</li>
+      <li>Keyboard-navigable menus, modals, and interactive elements</li>
+      <li>Focus traps on modal dialogs (cart, checkout, cookie preferences) to prevent focus escaping</li>
+      <li>Sufficient colour contrast ratios for text and interactive elements</li>
+      <li>ARIA labels on icon-only buttons and links (cart, social media)</li>
+      <li>Responsive design that adapts to different screen sizes and zoom levels</li>
+      <li>Form inputs with clear labels and validation feedback</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h2>3. Known Limitations</h2>
+    <p>While we strive for full accessibility, we acknowledge some areas may need further improvement:</p>
+    <ul>
+      <li>Some third-party content (e.g., embedded fonts, payment forms via Stripe) may not be fully within our control</li>
+      <li>Older browsers may not support all accessibility features</li>
+      <li>Some decorative animations may not respect reduced-motion preferences in all cases</li>
+    </ul>
+    <p>We are actively working to address these limitations and will update this statement as improvements are made.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>4. Feedback &amp; Contact</h2>
+    <p>We welcome your feedback on the accessibility of The Snug Spot. If you encounter any barriers or have suggestions for improvement, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:hello@thesnugspot.com">hello@thesnugspot.com</a></li>
+      <li><strong>Subject line:</strong> Accessibility Feedback</li>
+    </ul>
+    <p>We aim to acknowledge accessibility feedback within 5 business days and to resolve reported issues as quickly as possible.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>5. Enforcement</h2>
+    <p>If you are not satisfied with our response, you may contact the <a href="https://www.equalityadvisoryservice.com/" target="_blank" rel="noopener">Equality Advisory Support Service (EASS)</a>, which provides advice and information to individuals with complaints about disability-related discrimination in England, Scotland, and Wales.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p class="foot-copy">&copy; 2026 The Snug Spot is a trading name of Milene Borges de Moura (Sole Trader). 58 Sydney Road, London SW20 8EF. All rights reserved.</p>
+  <div class="foot-legal">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/accessibility.html">Accessibility</a>
+    <a href="/">Back to Shop</a>
+  </div>
+</footer>
+
+</body>
+</html>

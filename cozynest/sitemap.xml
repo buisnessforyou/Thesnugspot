@@ -13,4 +13,5 @@
   <url><loc>https://thesnugspot.com/track-order.html</loc><priority>0.4</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://thesnugspot.com/privacy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://thesnugspot.com/terms.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://thesnugspot.com/accessibility.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>
