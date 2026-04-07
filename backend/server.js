@@ -19,7 +19,7 @@ if (!DEMO_MODE) {
 app.use('/api/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN || 'https://thesnugspot.com',
+  origin: process.env.ALLOWED_ORIGIN || (process.env.NETLIFY ? 'https://thesnugspot.com' : true),
   methods: ['GET','POST','PATCH','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization']
 }));

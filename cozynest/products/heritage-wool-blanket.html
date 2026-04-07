@@ -452,7 +452,8 @@
 
   function addToCart() {
     const name = 'Heritage Wool Blanket (' + selectedSize + ', ' + selectedColour + ')';
-    const img = '/images/products/blanket-natural-oat.jpg';
+    const selectedBtn = document.querySelector('.colour-btn.selected');
+    const img = (selectedBtn && selectedBtn.dataset.img) || '/images/products/blanket-natural-oat.jpg';
     const existing = cart.find(i => i.name === name);
     if (existing) { existing.qty += qty; }
     else { cart.push({ name, price: selectedPrice, qty, img }); }
