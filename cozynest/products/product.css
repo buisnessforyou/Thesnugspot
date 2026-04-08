@@ -8,10 +8,11 @@
 }
 body { background: var(--cream); color: var(--text-dark); font-family: var(--font-body); font-size: 15px; line-height: 1.7; }
 nav { position: sticky; top: 0; z-index: 100; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(44,26,14,0.08); padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.nav-logo { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--deep-brown); text-decoration: none; }
+.nav-logo { display: flex; align-items: baseline; gap: 6px; font-family: 'Playfair Display','Cormorant Garamond',Georgia,serif; color: var(--deep-brown); text-decoration: none; }
+.nav-logo .logo-the { font-size: 30px; font-weight: 900; letter-spacing: -1px; }
+.nav-logo .logo-snugspot { font-size: 18px; font-weight: 400; letter-spacing: -0.5px; }
 .nav-mark { width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid rgba(44,26,14,.15); overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .nav-mark img { height: 36px; object-fit: contain; }
-.nav-logo span { color: var(--terracotta); }
 .nav-right { display: flex; align-items: center; gap: 20px; }
 .nav-back { font-size: 13px; font-weight: 500; letter-spacing: .06em; color: var(--text-mid); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color .2s; }
 .nav-back:hover { color: var(--terracotta); }
