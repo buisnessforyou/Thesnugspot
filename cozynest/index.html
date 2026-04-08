@@ -1416,6 +1416,8 @@
     #cookieAcceptAllBtn:hover { background: var(--deep-brown) !important; }
     #cookieSaveBtn:hover { background: var(--terracotta) !important; }
     #cookieRejectBtn:hover { border-color: var(--deep-brown) !important; color: var(--deep-brown) !important; }
+    .toast { position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--deep-brown); color:var(--cream); padding:14px 28px; border-radius:8px; font-size:14px; font-weight:500; opacity:0; pointer-events:none; transition:all .4s var(--ease); z-index:5000; white-space:nowrap; }
+    .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
   </style>
   <!-- Animation libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -1813,6 +1815,7 @@
   </div>
 </footer>
 
+<div class="toast" id="toast"></div>
 
 <!-- ─── COOKIE MODAL ─── -->
 <div id="cookieModal" style="display:none;position:fixed;inset:0;z-index:4000;background:rgba(30,20,10,.52);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px;">
@@ -1975,6 +1978,16 @@
           </select>
         </div>
       </div>
+      <div class="ck-row full" style="margin-top:18px;">
+        <div class="ck-field">
+          <label for="ckShipping">Shipping Method</label>
+          <select id="ckShipping">
+            <option value="standard">Standard — £4.95 (4–14 business days)</option>
+            <option value="express">Express — £9.95 (2–5 business days)</option>
+            <option value="free" disabled>Free — orders over £75</option>
+          </select>
+        </div>
+      </div>
       <div style="background:rgba(143,166,138,.08);border:1px solid rgba(143,166,138,.2);border-radius:4px;padding:12px 16px;margin-top:18px;font-size:12px;color:var(--text-mid);line-height:1.65;">
         <strong style="color:var(--deep-brown);">Your rights:</strong> Under the Consumer Contracts Regulations 2013, you have <strong>14 days from delivery</strong> to cancel your order for any reason. We also offer a 30-day money-back guarantee. <a href="/returns.html" target="_blank" style="color:var(--terracotta);text-decoration:underline;">Full returns policy</a>
       </div>
@@ -2070,24 +2083,9 @@
 
   /* ── Bundle add-to-cart ── */
   function addBundle() {
-    /* Re-read cart from localStorage to avoid stale closure state */
-    var currentCart; try { currentCart = JSON.parse(localStorage.getItem('snugspot_cart') || '[]'); } catch(e) { currentCart = []; }
-    var items = [
-      { name:'Heritage Wool Blanket', price:13.99, qty:1, img:'/images/products/blanket-natural-oat.jpg' },
-      { name:'Soy Wax Candle Trio',   price:15.00, qty:1, img:'/images/products/candle-trio.jpg' },
-      { name:'Bonfire Flame Aroma Diffuser', price:29.99, qty:1, img:'/images/products/diffuser-front.png' }
-    ];
-    items.forEach(function(item) {
-      var existing = currentCart.find(function(c) { return c.name === item.name; });
-      if (existing) { existing.qty += 1; }
-      else { currentCart.push(item); }
-    });
-    localStorage.setItem('snugspot_cart', JSON.stringify(currentCart));
-    /* Sync the cart drawer's closure if it exists */
-    if (typeof cart !== 'undefined') { cart = currentCart; if (typeof renderCart === 'function') renderCart(); }
-    var dot = document.querySelector('.cart-dot');
-    if (dot) { var c = currentCart.reduce(function(s,i){return s+i.qty;},0); dot.textContent = c||'0'; dot.style.background = c ? 'var(--terracotta)' : 'var(--text-light)'; }
-    var t=document.getElementById('toast');if(t){t.textContent='\u2713 Bundle added to cart';t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2200);}
+    /* Dispatch a custom event so the IIFE-scoped cart drawer can pick it up */
+    var bundleItem = { name:'The Snug Evening Bundle', price:50.13, qty:1, img:'/images/products/blanket-natural-oat.jpg' };
+    window.dispatchEvent(new CustomEvent('snugspot:addToCart', { detail: bundleItem }));
   }
 
 
@@ -2662,7 +2660,12 @@
     /* ── Build summary HTML ── */
     function buildSummaryHTML() {
       const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-      const shipping = subtotal >= 75 ? 0 : 4.95;
+      const shipSel = document.getElementById('ckShipping');
+      const shipMethod = shipSel ? shipSel.value : 'standard';
+      let shipping;
+      if (subtotal >= 75) { shipping = 0; }
+      else if (shipMethod === 'express') { shipping = 9.95; }
+      else { shipping = 4.95; }
       const total    = subtotal + shipping;
       let rows = cart.map(i =>
         `<div class="ck-sum-item"><span>${esc(i.name)} × ${i.qty}</span><span>£${(i.price*i.qty).toFixed(2)}</span></div>`
@@ -2680,6 +2683,21 @@
       closeCart();
       // Reset to step 1
       showCkStep(1);
+      /* Set shipping selector based on cart subtotal */
+      var subtotal = cart.reduce(function(s,i){return s+i.price*i.qty;},0);
+      var shipSel = document.getElementById('ckShipping');
+      if (shipSel) {
+        var freeOpt = shipSel.querySelector('[value="free"]');
+        var stdOpt = shipSel.querySelector('[value="standard"]');
+        var expOpt = shipSel.querySelector('[value="express"]');
+        if (subtotal >= 75) {
+          freeOpt.disabled = false; freeOpt.selected = true;
+          stdOpt.disabled = true; expOpt.disabled = true;
+        } else {
+          freeOpt.disabled = true; stdOpt.disabled = false; expOpt.disabled = false;
+          stdOpt.selected = true;
+        }
+      }
       checkoutOverlay.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -2862,6 +2880,16 @@
     });
 
     ckDone.addEventListener('click', closeCheckout);
+
+    /* Listen for bundle add-to-cart events from outside the IIFE */
+    window.addEventListener('snugspot:addToCart', function(e) {
+      var item = e.detail;
+      var existing = cart.find(function(c) { return c.name === item.name; });
+      if (existing) { existing.qty += item.qty; }
+      else { cart.push({ name: item.name, price: item.price, qty: item.qty, img: item.img }); }
+      renderCart();
+      openCart();
+    });
 
     /* Initial render */
     renderCart();

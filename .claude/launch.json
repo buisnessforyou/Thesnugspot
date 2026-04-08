@@ -21,10 +21,9 @@
     }
     ,{
       "name": "cozynest",
-      "runtimeExecutable": "/Users/lukas/.nvm/versions/node/v24.14.0/bin/node",
-      "runtimeArgs": ["backend/server.js"],
-      "port": 3001,
-      "autoPort": false
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3002", "--directory", "cozynest"],
+      "port": 3002
     }
   ]
 }
