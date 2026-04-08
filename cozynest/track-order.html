@@ -5,6 +5,8 @@
   <link rel="icon" type="image/png" href="/images/sofa-logo.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Track Order — The Snug Spot</title>
+  <meta name="description" content="Track your order from The Snug Spot. Enter your order number and email to check the status of your delivery."/>
+  <link rel="canonical" href="https://thesnugspot.com/track-order.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -80,6 +82,8 @@
     .foot-legal a { color: rgba(250,247,242,.55); font-size: 13px; text-decoration: none; transition: color .2s; }
     .foot-legal a:hover { color: var(--terracotta); }
 
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+
     @media (max-width: 640px) {
       nav { padding: 0 24px; } .hero { padding: 56px 24px 48px; }
       .wrap { padding: 48px 24px 72px; } .track-card { padding: 32px 24px; }
@@ -108,12 +112,12 @@
     <h2>Order lookup</h2>
     <p>Your order number can be found in your confirmation email (e.g. CN-123456).</p>
     <div class="field">
-      <label>Order number</label>
-      <input type="text" placeholder="CN-123456"/>
+      <label for="trackOrderNum">Order number</label>
+      <input type="text" id="trackOrderNum" placeholder="CN-123456"/>
     </div>
     <div class="field">
-      <label>Email address</label>
-      <input type="email" placeholder="you@example.com"/>
+      <label for="trackEmail">Email address</label>
+      <input type="email" id="trackEmail" placeholder="you@example.com"/>
     </div>
     <button class="btn-track" onclick="alert('Tracking is coming soon. Please check your shipping confirmation email for your tracking link, or contact us for help.')">Track my order</button>
   </div>

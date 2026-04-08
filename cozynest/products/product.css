@@ -83,3 +83,6 @@ footer { background: var(--deep-brown); padding: 40px 48px; text-align: center; 
   nav { padding: 0 24px; } .breadcrumb { padding: 16px 24px; } footer { padding: 32px 24px; }
 }
 @media (max-width: 480px) { .add-row { flex-direction: column; } }
+/* Focus-visible styles for keyboard accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+[type="checkbox"]:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }

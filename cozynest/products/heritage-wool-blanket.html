@@ -323,7 +323,7 @@
     <!-- ACCORDION -->
     <div class="accordion">
       <div class="acc-item">
-        <button class="acc-trigger open" onclick="toggleAcc(this)">
+        <button class="acc-trigger open" onclick="toggleAcc(this)" aria-expanded="true">
           Product Details
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -339,7 +339,7 @@
         </div>
       </div>
       <div class="acc-item">
-        <button class="acc-trigger" onclick="toggleAcc(this)">
+        <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
           Care Instructions
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -354,12 +354,12 @@
         </div>
       </div>
       <div class="acc-item">
-        <button class="acc-trigger" onclick="toggleAcc(this)">
+        <button class="acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
           Shipping &amp; Returns
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="acc-body">
-          <p>Orders dispatched within 3–4 business days. Estimated UK delivery 4–7 days. Free standard shipping on orders over £75 (otherwise £4.95).</p>
+          <p>Orders dispatched within 3–4 business days. Estimated UK delivery 4–14 business days. Free standard shipping on orders over £75 (otherwise £4.95).</p>
           <br/>
           <p>Not happy? Return within 30 days for a full refund. Item must be unused and in original condition. Contact <a href="mailto:support@thesnugspot.com" style="color:var(--terracotta)">support@thesnugspot.com</a> to start a return.</p>
         </div>
@@ -387,7 +387,7 @@
   const CART_KEY = 'snugspot_cart';
   let cart; try { cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch(e) { cart = []; localStorage.setItem(CART_KEY, '[]'); }
   let qty = 1;
-  let selectedSize = 'Small';
+  let selectedSize = 'XS';
   let selectedPrice = 13.99;
   let selectedColour = 'Natural Oat';
 
@@ -468,6 +468,7 @@
     const body = btn.nextElementSibling;
     btn.classList.toggle('open');
     body.classList.toggle('open');
+    btn.setAttribute('aria-expanded', btn.classList.contains('open'));
   }
 </script>
 <script src="/cookie-consent.js"></script>
