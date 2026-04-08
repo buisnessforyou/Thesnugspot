@@ -9,11 +9,11 @@
   <link rel="canonical" href="https://thesnugspot.com/products/rattan-tray.html"/>
   <meta property="og:title" content="Rattan Storage Tray — The Snug Spot"/>
   <meta property="og:description" content="Hand-woven rattan storage tray with natural grain finish. 35×25×5cm. Keep surfaces serene and beautiful. Free UK shipping over £75."/>
-  <meta property="og:image" content="/images/products/rattan-tray.jpg"/>
+  <meta property="og:image" content="/images/products/coming-soon.svg"/>
   <meta property="og:type" content="product"/>
   <meta property="og:url" content="https://thesnugspot.com/products/rattan-tray.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Rattan Storage Tray","image":"https://thesnugspot.com/images/products/rattan-tray.jpg","description":"Hand-woven rattan with natural grain finish. A beautiful way to keep surfaces serene.","brand":{"@type":"Brand","name":"The Snug Spot"},"offers":{"@type":"Offer","price":"38.00","priceCurrency":"GBP","availability":"https://schema.org/InStock"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Rattan Storage Tray","image":"https://thesnugspot.com/images/products/coming-soon.svg","description":"Hand-woven rattan with natural grain finish. A beautiful way to keep surfaces serene.","brand":{"@type":"Brand","name":"The Snug Spot"},"offers":{"@type":"Offer","price":"38.00","priceCurrency":"GBP","availability":"https://schema.org/InStock"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/products/product.css"/>
@@ -23,9 +23,9 @@
 <nav class="breadcrumb"><a href="/">Home</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><a href="/#products">Collection</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><span>Rattan Storage Tray</span></nav>
 <div class="product-wrap">
   <div>
-    <div class="gallery-main"><img id="mainImg" src="/images/products/rattan-tray.jpg" alt="Rattan Storage Tray hand-woven natural"/></div>
+    <div class="gallery-main"><img id="mainImg" src="/images/products/coming-soon.svg" alt="Rattan Storage Tray hand-woven natural"/></div>
     <div class="gallery-thumbs">
-      <div class="thumb active" tabindex="0" role="button" onclick="switchImg(this,'/images/products/rattan-tray.jpg')"><img src="/images/products/rattan-tray.jpg" alt="Tray front"/></div>
+      <div class="thumb active" tabindex="0" role="button" onclick="switchImg(this,'/images/products/coming-soon.svg')"><img src="/images/products/coming-soon.svg" alt="Tray front"/></div>
     </div>
   </div>
   <div class="product-info">
@@ -47,7 +47,7 @@
 const CART_KEY='snugspot_cart';let cart;try{cart=JSON.parse(localStorage.getItem(CART_KEY)||'[]');}catch(e){cart=[];localStorage.setItem(CART_KEY,'[]');}let qty=1;
 function updateCartCount(){document.getElementById('cartCount').textContent=cart.reduce((s,i)=>s+i.qty,0);}updateCartCount();
 function changeQty(d){qty=Math.max(1,Math.min(10,qty+d));document.getElementById('qty').textContent=qty;}
-function addToCart(){const name='Rattan Storage Tray';const img='/images/products/rattan-tray.jpg';const e=cart.find(i=>i.name===name);if(e){e.qty+=qty;}else{cart.push({name,price:38,qty,img});}localStorage.setItem(CART_KEY,JSON.stringify(cart));updateCartCount();showToast();}
+function addToCart(){const name='Rattan Storage Tray';const img='/images/products/coming-soon.svg';const e=cart.find(i=>i.name===name);if(e){e.qty+=qty;}else{cart.push({name,price:38,qty,img});}localStorage.setItem(CART_KEY,JSON.stringify(cart));updateCartCount();showToast();}
 function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
 function goToCart(){window.location.href='/?opencart=1';}
 function switchImg(thumb,src){document.getElementById('mainImg').src=src;document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));thumb.classList.add('active');}
