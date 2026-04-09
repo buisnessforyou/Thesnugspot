@@ -35,7 +35,7 @@
   </style>
 </head>
 <body>
-<nav aria-label="Main navigation"><a href="/" class="nav-logo"><span class="nav-mark"><img src="/images/sofa-logo.png" alt="The Snug Spot"/></span><span class="logo-the">The</span><span class="logo-snugspot">SnugSpot</span></a><div class="nav-right"><a href="/" class="nav-back"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Shop</a><button class="nav-cart-btn" onclick="goToCart()" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span class="cart-count" id="cartCount">0</span></button></div></nav>
+<nav aria-label="Main navigation"><a href="/" class="nav-logo"><span class="nav-mark"><img src="/images/sofa-logo.png" alt="The Snug Spot"/></span><span class="logo-the">The</span><span class="logo-snugspot">SnugSpot</span></a><div class="nav-right"><a href="/" class="nav-back"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Shop</a><button class="nav-cart-btn" onclick="goToCart()" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span class="cart-count" id="cartCount" aria-live="polite" aria-atomic="true">0</span></button></div></nav>
 <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><a href="/#products">Collection</a></nav>
 <div class="product-wrap">
   <div>
@@ -52,9 +52,9 @@
     <!-- SCENT SELECTOR -->
     <p class="option-label">Scent <span id="selectedScentLabel">— Vanilla</span></p>
     <div class="scent-grid" role="radiogroup" aria-label="Select scent">
-      <button class="scent-btn selected" role="radio" aria-checked="true" data-scent="Vanilla" title="Vanilla" aria-label="Vanilla" onclick="selectScent(this)" style="background:#F5E6C8;"></button>
-      <button class="scent-btn" role="radio" aria-checked="false" data-scent="Chocolate" title="Chocolate" aria-label="Chocolate" onclick="selectScent(this)" style="background:#5C3D2E;"></button>
-      <button class="scent-btn" role="radio" aria-checked="false" data-scent="Cinnamon" title="Cinnamon" aria-label="Cinnamon" onclick="selectScent(this)" style="background:#C4785A;"></button>
+      <button class="scent-btn selected" role="radio" aria-checked="true" tabindex="0" data-scent="Vanilla" title="Vanilla" aria-label="Vanilla" onclick="selectScent(this)" style="background:#F5E6C8;"></button>
+      <button class="scent-btn" role="radio" aria-checked="false" tabindex="-1" data-scent="Chocolate" title="Chocolate" aria-label="Chocolate" onclick="selectScent(this)" style="background:#5C3D2E;"></button>
+      <button class="scent-btn" role="radio" aria-checked="false" tabindex="-1" data-scent="Cinnamon" title="Cinnamon" aria-label="Cinnamon" onclick="selectScent(this)" style="background:#C4785A;"></button>
     </div>
 
     <div class="add-row"><div class="qty-wrap"><button class="qty-btn" aria-label="Decrease quantity" onclick="changeQty(-1)">−</button><span class="qty-num" id="qty" aria-live="polite">1</span><button class="qty-btn" aria-label="Increase quantity" onclick="changeQty(1)">+</button></div><button class="btn-atc" onclick="addToCart()">Add to Cart</button></div>
@@ -75,7 +75,7 @@ const CART_KEY='snugspot_cart';let cart;try{cart=JSON.parse(localStorage.getItem
 let selectedScent='Vanilla';
 function updateCartCount(){const count=cart.reduce((s,i)=>s+i.qty,0);document.getElementById('cartCount').textContent=count;document.getElementById('cartCount').style.display=count>0?'flex':'none';}updateCartCount();
 function changeQty(d){qty=Math.max(1,Math.min(10,qty+d));document.getElementById('qty').textContent=qty;}
-function selectScent(btn){document.querySelectorAll('.scent-btn').forEach(b=>{b.classList.remove('selected');b.setAttribute('aria-checked','false');});btn.classList.add('selected');btn.setAttribute('aria-checked','true');selectedScent=btn.dataset.scent;document.getElementById('selectedScentLabel').textContent='— '+selectedScent;}
+function selectScent(btn){document.querySelectorAll('.scent-btn').forEach(b=>{b.classList.remove('selected');b.setAttribute('aria-checked','false');b.setAttribute('tabindex','-1');});btn.classList.add('selected');btn.setAttribute('aria-checked','true');btn.setAttribute('tabindex','0');selectedScent=btn.dataset.scent;document.getElementById('selectedScentLabel').textContent='— '+selectedScent;}
 function addToCart(){const name='Beeswax Candle — '+selectedScent;const img='/images/products/coming-soon.svg';const e=cart.find(i=>i.name===name);if(e){e.qty+=qty;}else{cart.push({name,price:20,qty,img});}localStorage.setItem(CART_KEY,JSON.stringify(cart));localStorage.setItem('snugspot_cart_ts',String(Date.now()));updateCartCount();showToast();qty=1;document.getElementById('qty').textContent='1';}
 function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
 function goToCart(){window.location.href='/?opencart=1';}
@@ -93,5 +93,5 @@ document.querySelector('.scent-grid').addEventListener('keydown',function(e){
   btns[idx].focus();selectScent(btns[idx]);
 });
 </script>
-<script src="/cookie-consent.js"></script>
+<script src="/cookie-consent.js?v=2"></script>
 </body></html>

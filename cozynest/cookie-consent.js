@@ -45,7 +45,7 @@
       document.getElementById('cookieAnalytics').checked = false;
       document.getElementById('cookiePersonalisation').checked = false;
     } else {
-      var prefs = JSON.parse(localStorage.getItem('cnCookiePrefs') || '{}');
+      var prefs = JSON.parse(localStorage.getItem('snugspot_cookies') || '{}');
       document.getElementById('cookieAnalytics').checked = prefs.analytics !== false;
       document.getElementById('cookiePersonalisation').checked = prefs.personalisation !== false;
     }
@@ -66,12 +66,12 @@
   }
 
   acceptAllBtn.addEventListener('click', function() {
-    localStorage.setItem('cnCookiePrefs', JSON.stringify({ analytics: true, personalisation: true }));
+    localStorage.setItem('snugspot_cookies', JSON.stringify({ analytics: true, personalisation: true }));
     closeCookieModal();
   });
 
   saveBtn.addEventListener('click', function() {
-    localStorage.setItem('cnCookiePrefs', JSON.stringify({
+    localStorage.setItem('snugspot_cookies', JSON.stringify({
       analytics: document.getElementById('cookieAnalytics').checked,
       personalisation: document.getElementById('cookiePersonalisation').checked
     }));
@@ -79,12 +79,12 @@
   });
 
   rejectBtn.addEventListener('click', function() {
-    localStorage.setItem('cnCookiePrefs', JSON.stringify({ analytics: false, personalisation: false }));
+    localStorage.setItem('snugspot_cookies', JSON.stringify({ analytics: false, personalisation: false }));
     closeCookieModal();
   });
 
   // Auto-show on first visit if no cookie choice has been made
-  if (localStorage.getItem('cnCookiePrefs') === null) {
+  if (localStorage.getItem('snugspot_cookies') === null) {
     openCookieModal(true);
   }
 })();
