@@ -8,7 +8,7 @@
   <meta name="description" content="Hand-poured beeswax candles in Vanilla, Chocolate and Cinnamon. 220g, 40-45 hour burn time. Free UK returns.">
   <meta property="og:title" content="The Snug Spot — Hand-Poured Beeswax Candles">
   <meta property="og:description" content="Hand-poured beeswax candles in three warming scents. Individually or as a trio bundle. Free 30-day returns.">
-  <meta property="og:image" content="/images/products/coming-soon.svg">
+  <meta property="og:image" content="https://thesnugspot.com/images/products/coming-soon.svg">
   <meta property="og:url" content="https://thesnugspot.com/">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://thesnugspot.com/"/>
@@ -1954,7 +1954,7 @@
         </div>
         <h3>Order Placed!</h3>
         <p>Thank you for shopping with The Snug Spot.<br>Your cosy essentials are on their way.</p>
-        <p class="ck-order-num" id="ckOrderNum">Order #CN-000000</p>
+        <p class="ck-order-num" id="ckOrderNum">Order #SS-000000</p>
         <div style="margin-top:28px">
           <div class="ck-summary" id="ckConfirmSummary"></div>
         </div>
@@ -2223,6 +2223,11 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
+    /* Close cookie modal on Escape key */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') { closeCookieModal(); }
+    });
+
     // Auto-show on first visit if no cookie choice has been made
     if (localStorage.getItem('cnCookiePrefs') === null) {
       openCookieModal(true);
@@ -2333,7 +2338,9 @@
   /* ── Smooth anchor scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
+      const href = a.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      const t = document.querySelector(href);
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
@@ -2506,6 +2513,7 @@
       if (action === 'inc') cart[idx].qty++;
       else if (action === 'dec') { cart[idx].qty--; if (cart[idx].qty <= 0) cart.splice(idx, 1); }
       else if (action === 'remove') cart.splice(idx, 1);
+      localStorage.setItem(CART_KEY + '_ts', String(Date.now()));
       renderCart();
     });
 
@@ -2592,6 +2600,7 @@
       if (e.key !== 'Escape') return;
       if (checkoutOverlay.classList.contains('open')) { closeCheckout(); }
       else if (cartDrawer.classList.contains('open')) { closeCart(); }
+      else if (document.getElementById('mobileMenu').classList.contains('open')) { toggleMenu(false); }
     });
 
     /* ── Step navigation ── */
@@ -2655,7 +2664,7 @@
     /* ── Place Order → real backend ── */
     const API = window.location.hostname === 'localhost'
       ? (window.location.port === '3001' ? '' : 'http://localhost:3001')
-      : '';  // production: Netlify redirects /api/* to functions
+      : '';  // production: API endpoint
 
     let _submitting = false;
     ckPlaceOrder.addEventListener('click', async () => {
@@ -2930,8 +2939,8 @@ window.addEventListener('resize',resize);
 
 /* ── Animation loop ── */
 var rafId,time=0;
-function animate(){
-  rafId=requestAnimationFrame(animate);
+var running=false;
+function tick(){
   time+=0.016;
 
   smoothMouse.x+=(mouse.x-smoothMouse.x)*0.03;
@@ -2942,15 +2951,20 @@ function animate(){
   gl.uniform2f(uMouse,smoothMouse.x,smoothMouse.y);
 
   gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+  rafId=requestAnimationFrame(tick);
+}
+function animate(){
+  if(running)return;running=true;
+  rafId=requestAnimationFrame(tick);
 }
 
 document.addEventListener('visibilitychange',function(){
-  if(document.hidden)cancelAnimationFrame(rafId);else animate();
+  if(document.hidden){cancelAnimationFrame(rafId);running=false;}else animate();
 });
 
 animate();
-new IntersectionObserver(function(e){if(!e[0].isIntersecting){cancelAnimationFrame(rafId);}else{animate();}},{threshold:0}).observe(heroPin);
-window.addEventListener('unload',function(){cancelAnimationFrame(rafId);});
+new IntersectionObserver(function(e){if(!e[0].isIntersecting){cancelAnimationFrame(rafId);running=false;}else{animate();}},{threshold:0}).observe(heroPin);
+window.addEventListener('unload',function(){cancelAnimationFrame(rafId);running=false;});
 
 }catch(e){console.error('Honey BG error:',e.message,e.stack);}
 })();
