@@ -178,8 +178,9 @@
       position:absolute; top:-5px; right:-7px;
       width:15px; height:15px; background:var(--terracotta); color:#fff;
       border-radius:50%; font-size:8px; font-weight:500;
-      display:flex; align-items:center; justify-content:center;
+      display:none; align-items:center; justify-content:center;
     }
+    .cart-dot.has-items { display:flex; }
     .btn-nav {
       font-size:11px; letter-spacing:.14em; text-transform:uppercase;
       padding:10px 22px; background:rgba(250,247,242,.12); color:var(--cream);
@@ -1306,8 +1307,6 @@
     #cookieAcceptAllBtn:hover { background: var(--deep-brown) !important; }
     #cookieSaveBtn:hover { background: var(--terracotta) !important; }
     #cookieRejectBtn:hover { border-color: var(--deep-brown) !important; color: var(--deep-brown) !important; }
-    .toast { position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--deep-brown); color:var(--cream); padding:14px 28px; border-radius:8px; font-size:14px; font-weight:500; opacity:0; pointer-events:none; transition:all .4s var(--ease); z-index:5000; white-space:nowrap; }
-    .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
   </style>
   <!-- Animation libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -1372,7 +1371,7 @@
 
 
 <!-- ─── MOBILE MENU OVERLAY ─── -->
-<div class="nav-mobile-menu" id="mobileMenu">
+<div class="nav-mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <a href="#products" class="mob-link">Shop</a>
   <a href="#products" class="mob-link">Collections</a>
   <a href="/our-story.html" class="mob-link">Stories</a>
@@ -1714,14 +1713,14 @@
     <p class="foot-copy">© 2026 The Snug Spot is a trading name of Milene Borges de Moura (Sole Trader). 58 Sydney Road, London SW20 8EF. All rights reserved.</p>
     <div class="foot-legal">
       <a href='/privacy.html'>Privacy Policy</a>
-      <a href='/terms.html'>Terms of Service</a>
+      <a href='/terms.html'>Terms</a>
+      <a href='/returns.html'>Returns</a>
       <a href='/accessibility.html'>Accessibility</a>
       <a href="#" id="cookiePrefLink">Cookie Preferences</a>
     </div>
   </div>
 </footer>
 
-<div class="toast" id="toast"></div>
 
 <!-- ─── COOKIE MODAL ─── -->
 <div id="cookieModal" role="dialog" aria-modal="true" aria-label="Cookie preferences" style="display:none;position:fixed;inset:0;z-index:4000;background:rgba(30,20,10,.52);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px;">
@@ -1774,7 +1773,7 @@
 <div class="cart-overlay" id="cartOverlay"></div>
 
 <!-- ─── CART DRAWER ─── -->
-<div class="cart-drawer" id="cartDrawer">
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
   <div class="cart-head">
     <div style="display:flex;align-items:baseline;gap:8px">
       <h2>Your Cart</h2>
@@ -1804,7 +1803,7 @@
 
 <!-- ─── CHECKOUT OVERLAY ─── -->
 <div class="checkout-overlay" id="checkoutOverlay">
-  <div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout">
 
     <div class="ck-head">
       <h2 id="ckTitle">Shipping</h2>
@@ -2464,7 +2463,7 @@
 
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
       cartDot.textContent = count || '0';
-      cartDot.style.background = count ? 'var(--terracotta)' : 'var(--text-light)';
+      if (count > 0) { cartDot.classList.add('has-items'); } else { cartDot.classList.remove('has-items'); }
       cartHeadCount.textContent = count === 1 ? '1 item' : count + ' items';
       cartTotal.textContent = '£' + total.toFixed(2).replace(/\.00$/, '');
       btnCheckout.disabled = count === 0;
@@ -2510,7 +2509,7 @@
       if (!btn) return;
       const idx = +btn.dataset.idx;
       const action = btn.dataset.action;
-      if (action === 'inc') cart[idx].qty++;
+      if (action === 'inc') { if (cart[idx].qty < 10) cart[idx].qty++; }
       else if (action === 'dec') { cart[idx].qty--; if (cart[idx].qty <= 0) cart.splice(idx, 1); }
       else if (action === 'remove') cart.splice(idx, 1);
       localStorage.setItem(CART_KEY + '_ts', String(Date.now()));

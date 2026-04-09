@@ -19,7 +19,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(250,247,242,0.96)
 .nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 .nav-cart-btn { position: relative; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-cart-btn svg { width: 21px; height: 21px; stroke: var(--text-mid); fill: none; stroke-width: 1.5; }
-.cart-count { position: absolute; top: -4px; right: -6px; width: 15px; height: 15px; background: var(--terracotta); color: #fff; border-radius: 50%; font-size: 8px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
+.cart-count { position: absolute; top: -4px; right: -6px; width: 15px; height: 15px; background: var(--terracotta); color: #fff; border-radius: 50%; font-size: 8px; font-weight: 500; display: none; align-items: center; justify-content: center; }
 .breadcrumb { padding: 18px 48px; font-size: 16px; font-weight: 500; font-style: italic; font-family: var(--font-display); color: var(--text-mid); display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; }
 .breadcrumb a { color: var(--text-mid); text-decoration: none; transition: color .2s; font-weight: 500; font-size: 16px; font-style: italic; font-family: var(--font-display); }
 .breadcrumb a:hover { color: var(--terracotta); }
